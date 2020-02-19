@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Admin\\": "admin/adminControl/",
+      "User\\": "control/"
+    }
+  }
+}

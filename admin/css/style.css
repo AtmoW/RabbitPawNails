@@ -1,0 +1,31 @@
+html{
+    box-sizing: border-box;
+}
+
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+.form__block{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.portfolio{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.portfolio-item{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.portfolio-item img{
+    max-width: 300px;
+}
