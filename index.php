@@ -4,6 +4,11 @@ require_once __DIR__ . '/vendor/autoload.php';
 include_once 'header.php';
 
 use Admin\DataBase;
+use User\Calendar;
+
+$calendar = Calendar::createMonths();
+$week = array(0 => "вс", "пн", "вт", "ср", "чт", "пт", "сб");
+$weekNum = ["пн" => 7, "вт" => 6, "ср" => 5, "чт" => 4, "пт" => 3, "сб" => 2, "вс" => 1];
 
 $port = DataBase::select('portfolio');
 
@@ -78,325 +83,101 @@ $port = DataBase::select('portfolio');
                 <div class="calendar__title">
                     <div class="calendar__arrow-left prev"><img src="img/arrow-left.svg" alt=""></div>
                     <div class="month__slider-title">
-                        <div class="calendar__title-text">Февраль</div>
-                        <div class="calendar__title-text">Март</div>
+                        <div class="calendar__title-text"><?php echo $calendar['ThisMonth']; ?></div>
+                        <div class="calendar__title-text"><?php echo $calendar['NextMonth']; ?></div>
                     </div>
                     <div class="calendar__arrow-right next"><img src="img/arrow-right.svg" alt=""></div>
                 </div>
 
                 <div class="booking_calendar calendar">
                     <div class="calendar__month month">
-                        <a href="booking.php" class="calendar__day non__active another-month">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">27</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active another-month">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">28</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active another-month">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">29</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active another-month">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">30</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active another-month">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">31</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">1</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">2</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">3</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">4</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">5</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">6</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">7</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">8</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">9</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">10</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">11</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day ">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">12</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">13</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">14</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">15</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">16</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">17</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">18</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day ">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">19</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">20</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">21</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">22</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">23</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">24</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">25</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day ">
-                            <div class="calendar__day-week">cр</div>
-                            <div class="calendar__day-month">26</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">27</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">28</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">29</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active another-month">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">1</div>
-                        </a>
+
+                        <?php
+                        $firstDay = $weekNum[$week[date("w", mktime(0, 0, 0, $calendar['ThisMonthNumber'], 1, $calendar['ThisYear']))]];
+                        $prevMonthDays = 7 - $firstDay;
+                        if(isset($calendar['weekends'][(int)$calendar['ThisYear']][(int)$calendar['ThisMonthNumber']])){
+                            $weekends = $calendar['weekends'][(int)$calendar['ThisYear']][(int)$calendar['ThisMonthNumber']];
+                        }
+
+                        for ($i = $calendar['PrevMonthDays'] - $prevMonthDays + 1; $i <= $calendar['PrevMonthDays']; $i++): ?>
+                            <?php $day = $week[date("w", mktime(0, 0, 0, $calendar['PrevMonthNumber'], $i, $calendar['PrevYear']))]; ?>
+                            <a href="booking.php" class="calendar__day another-month">
+                                <div class="calendar__day-week"><?php echo $day ?></div>
+                                <div class="calendar__day-month"><?php echo $i ?></div>
+                            </a>
+                        <?php endfor; ?>
+
+
+
+                        <?php for ($i = 1; $i <= $calendar['ThisMonthDays']; $i++): ?>
+                            <?php $day = $week[date("w", mktime(0, 0, 0, $calendar['ThisMonthNumber'], $i, $calendar['ThisYear']))]; ?>
+                            <a href="booking.php?date=<?php echo $calendar['ThisYear']?>-<?php echo $calendar['ThisMonthNumber']?>-<?php if($i>=10){echo $i;}else{echo '0'.$i;}?>" class="calendar__day <?php if(in_array($i,$weekends)){echo "non__active";} ?>">
+                                <div class="calendar__day-week"><?php echo $day ?></div>
+                                <div class="calendar__day-month"><?php echo $i ?></div>
+                            </a>
+                        <?php endfor; ?>
+
+
+                        <?php
+                        $lastDay = $weekNum[$week[date("w", mktime(0, 0, 0, $calendar['ThisMonthNumber'], $calendar['ThisMonthDays'], $calendar['ThisYear']))]];
+                        $nextMonthDays = $lastDay - 1;
+                        for ($i = 1; $i <= $nextMonthDays; $i++): ?>
+                            <?php $day = $week[date("w", mktime(0, 0, 0, $calendar['NextMonthNumber'], $i, $calendar['NextYear']))]; ?>
+                            <a href="booking.php" class="calendar__day another-month">
+                                <div class="calendar__day-week"><?php echo $day ?></div>
+                                <div class="calendar__day-month"><?php echo $i ?></div>
+                            </a>
+                        <?php endfor; ?>
+
                     </div>
 
+
                     <div class="calendar__month month">
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">24</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">25</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">26</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">27</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">28</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">29</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">1</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">2</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">3</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day ">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">4</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">5</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">6</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">7</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">8</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">9</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">10</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">11</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">12</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">13</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">14</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">15</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">16</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">17</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">ср</div>
-                            <div class="calendar__day-month">18</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">19</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">20</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">21</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">22</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">23</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">24</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day ">
-                            <div class="calendar__day-week">cр</div>
-                            <div class="calendar__day-month">25</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">26</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day non__active">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">27</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">28</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">29</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">пн</div>
-                            <div class="calendar__day-month">30</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day">
-                            <div class="calendar__day-week">вт</div>
-                            <div class="calendar__day-month">31</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">cр</div>
-                            <div class="calendar__day-month">1</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">чт</div>
-                            <div class="calendar__day-month">2</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">пт</div>
-                            <div class="calendar__day-month">3</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">сб</div>
-                            <div class="calendar__day-month">4</div>
-                        </a>
-                        <a href="booking.php" class="calendar__day   another-month">
-                            <div class="calendar__day-week">вс</div>
-                            <div class="calendar__day-month">5</div>
-                        </a>
+                        <?php
+                        $firstDay = $weekNum[$week[date("w", mktime(0, 0, 0, $calendar['NextMonthNumber'], 1, $calendar['NextYear']))]];
+                        $prevMonthDays = 7 - $firstDay;
+                        $weekends = [];
+                        if( isset($calendar['weekends'][(int)$calendar['NextYear']][(int)$calendar['NextMonthNumber']])){
+                            $weekends = $calendar['weekends'][(int)$calendar['NextYear']][(int)$calendar['NextMonthNumber']];
+                        }
+
+                        for($i = $calendar['ThisMonthDays'] - $prevMonthDays + 1; $i <= $calendar['ThisMonthDays']; $i++): ?>
+                            <?php $day = $week[date("w", mktime(0, 0, 0, $calendar['NextMonthNumber']-1, $i, $calendar['NextYear']))];?>
+                            <a href="booking.php" class="calendar__day another-month">
+                                <div class="calendar__day-week"><?php echo $day?></div>
+                                <div class="calendar__day-month"><?php echo $i ?></div>
+                            </a>
+                        <?php endfor; ?>
+
+
+
+                        <?php for ($i = 1; $i <= $calendar['NextMonthDays']; $i++): ?>
+                            <?php $day = $week[date("w", mktime(0, 0, 0, $calendar['NextMonthNumber'], $i, $calendar['NextYear']))]; ?>
+                            <a href="booking.php?date=<?php echo $calendar['NextYear']?>-<?php echo $calendar['NextMonthNumber']?>-<?php if($i>=10){echo $i;}else{echo '0'.$i;}?>" class="calendar__day <?php if(in_array($i,$weekends)){echo "non__active";} ?>">
+                                <div class="calendar__day-week"><?php echo $day?></div>
+                                <div class="calendar__day-month"><?php echo $i ?></div>
+                            </a>
+                        <?php endfor; ?>
+
+
+                        <?php
+                        $lastDay = $weekNum[$week[date("w", mktime(0, 0, 0, $calendar['NextMonthNumber'], $calendar['NextMonthDays'], $calendar['NextYear']))]];
+                        $nextMonthDays = $lastDay - 1;
+                        if($calendar['NextMonthNumber'] != 1 || $calendar['NextMonthNumber'] != 12) {
+                            $thirdMonthNumber = 0;
+                            $thirdYear = $calendar['NextYear'];
+                        }
+                        else{
+                            $thirdMonthNumber = 1;
+                            $thirdYear = $calendar['NextYear'] + 1;
+                        }
+                        for($i = 1; $i <= $nextMonthDays; $i++): ?>
+                            <?php $day = $week[date("w", mktime(0, 0, 0, $thirdMonthNumber + 1, $i, $thirdYear))];?>
+                            <a href="booking.php" class="calendar__day another-month">
+                                <div class="calendar__day-week"><?php echo $day?></div>
+                                <div class="calendar__day-month"><?php echo $i ?></div>
+                            </a>
+                        <?php endfor; ?>
                     </div>
                 </div>
 

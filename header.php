@@ -7,6 +7,9 @@ use Admin\DataBase;
 $social = DataBase::select('social');
 $social = $social[0];
 
+$p = preg_split('//', $social['phone'], -1, PREG_SPLIT_NO_EMPTY);
+
+$phone = $p[0].'('.$p[1].$p[2].$p[3].')-'.$p[4].$p[5].$p[6].'-'.$p[7].$p[8].'-'.$p[9].$p[10];
 ?>
 
 <!DOCTYPE html>
@@ -45,12 +48,12 @@ $social = $social[0];
                     <div class="header__menu-list-sep last"></div>
                     <li>
                         <div class="menu__phone">
-                            <a href="tel:+<?php echo $social['phone']?>>"></a>
+                            <a href="tel:+<?php echo $social['phone']?>>">+<?php echo $phone?></a>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <div class="header__phone"><a href="tel:+<?php echo $social['phone']?>">+<?php echo $social['phone']?></a></div>
+            <div class="header__phone"><a href="tel:+<?php echo $social['phone']?>">+<?php echo $phone?></a></div>
             <div class="header__soсio">
                 <a href="https://instagram.com/<?php echo $social['instagram']?>"><img src="img/header-social-1.svg" alt=""></a>
                 <a href="<?php echo $social['vk']?>"><img src="img/header-social-2.svg" alt=""></a>

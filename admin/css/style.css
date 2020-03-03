@@ -1,31 +1,225 @@
-html{
+html {
     box-sizing: border-box;
 }
 
-*,*::after,*::before{
+*, *::after, *::before {
     box-sizing: inherit;
 }
 
-.form__block{
+header {
+    background-color: #3c39cc;
+    height: 40px;
+    display: flex;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+.menu{
+    display: flex;
+}
+.menu li{
+    list-style: none;
+}
+.form__block {
     display: flex;
     flex-direction: column;
     max-width: 300px;
     margin-bottom: 20px;
+    margin: 10px;
 }
 
-.portfolio{
+.portfolio, .breaks, .block {
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
 }
 
-.portfolio-item{
+.portfolio-item {
     display: flex;
     flex-direction: column;
     max-width: 300px;
     margin: 10px;
 }
 
-.portfolio-item img{
+.portfolio-item img {
     max-width: 300px;
 }
+
+.serv, .box {
+    border: 1px solid #000000;
+    margin: 4px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.serv__box, .time__block, .block {
+    margin: 4px;
+    width: fit-content;
+}
+
+.serv__block, .time__block {
+    margin: 10px;
+    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weekend {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.port__delete, .btn {
+    background-color: #CCCCCC;
+    cursor: pointer;
+    text-align: center;
+    padding: 4px;
+    border: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    margin: 5px;
+}
+
+.btn:hover {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 1);
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app__info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 190px;
+    margin: 5px;
+}
+
+.app__btn {
+    width: 100%;
+}
+
+.app__btn .btn {
+    margin-bottom: 3px;
+}
+
+.client__info, .client {
+    width: max-content;
+    padding: 3px;
+}
+
+.break {
+    max-width: 300px;
+}
+
+.burger {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .burger {
+        right: 0;
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 6;
+        cursor: pointer;
+    }
+
+    .burger::before, .burger::after {
+        content: '';
+        background-color: #ffffff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .burger::before {
+        top: 0;
+    }
+
+    .burger::after {
+        bottom: 0;
+    }
+
+    .burger span {
+        position: absolute;
+        background-color: #ffffff;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+
+    .burger.active::before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .burger.active::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+
+    .burger.active span {
+        transform: scale(0);
+    }
+
+    .header__menu-list {
+        position: fixed;
+        background-color: #3c39cc;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 -15px 0 -15px;
+        align-items: center;
+    }
+
+    .header__menu-list li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    .header__menu-list a{
+        margin: 0;
+        margin-left: -30px;
+    }
+
+    .header__menu-list.last {
+        display: none;
+    }
+
+    .menu {
+        top: 40px;
+        left: -200%;
+    }
+
+    .menu.active{
+        left: 15px;
+    }
+
+}
+
+

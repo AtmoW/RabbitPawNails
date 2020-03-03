@@ -236,7 +236,7 @@ main{
 }
 
 .calendar {
-    
+    overflow: hidden;
     & .slick-slide{
         display: flex;
     }
@@ -285,14 +285,6 @@ main{
             font-weight: normal;
             font-size: 49px;
             line-height: 57px;
-        }
-    }
-    
-    &__week {
-        display: flex;
-        margin-bottom: 9px;
-        &:last-child{
-            margin-bottom: 0;
         }
     }
 
@@ -394,6 +386,8 @@ main{
         text-align: center;
         padding-top: 3px;
         margin: 10px;
+        outline: none;
+        cursor: pointer;
     }
 }
 
@@ -445,11 +439,24 @@ main{
     cursor: default;
     pointer-events: none;
 }
-
+.connect{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    max-width: 300px;
+    &__input{
+        margin-top: 10px;
+        & input{
+            width: 100%;
+        }
+    }
+}
 .services {
     margin-top: 39px;
 
-
+    &__desc{
+        font-size: 16px;
+    }
     &__col{
         margin-right: 20px;
     }
@@ -521,10 +528,11 @@ main{
             font-size: 24px;
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
         }
     }
 
-    &__price{
+    &__price, &__sale-pers{
         margin-bottom: 13px;
     }
 
@@ -569,6 +577,20 @@ main{
         font-style: italic;
         font-weight: 500;
         font-size: 17px;
+    }
+}
+.end{
+    &__main{
+        min-height: 90vh;
+        padding: 10px;
+    }
+    &__title{
+        margin-top: 20vh;
+        text-align: center;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 55px;
     }
 }
 @media(max-width:1401px){
@@ -1054,6 +1076,15 @@ main{
             & img{
                 width: 50px;
             }
+        }
+    }
+}
+
+@media(max-width:340px){
+    .end{
+        &__title{
+            font-size: 30px;
+            line-height: 45px;
         }
     }
 }
